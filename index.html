@@ -77,6 +77,9 @@
             border-radius: 5px;
             margin-top: 10px;
             transition: background 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 14px;
         }
         .btn:hover {
             background: #2980b9;
@@ -89,6 +92,119 @@
         .contact-item {
             flex: 1;
             min-width: 200px;
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            overflow: auto;
+        }
+        .modal-content {
+            background-color: white;
+            margin: 2% auto;
+            padding: 0;
+            width: 90%;
+            max-width: 900px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            animation: modalOpen 0.3s;
+        }
+        @keyframes modalOpen {
+            from {opacity: 0; transform: translateY(-50px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+        .modal-header {
+            background: #2c3e50;
+            color: white;
+            padding: 20px 30px;
+            border-radius: 10px 10px 0 0;
+            position: relative;
+        }
+        .modal-body {
+            padding: 30px;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+        .close {
+            color: white;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .close:hover {
+            color: #f1c40f;
+        }
+        .project-detail-section {
+            margin: 25px 0;
+        }
+        .project-detail-section h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .tech-tag {
+            background: #e74c3c;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+        .project-image {
+            width: 100%;
+            max-width: 700px;
+            margin: 20px auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        .key-findings {
+            background: #ecf0f1;
+            padding: 20px;
+            border-left: 4px solid #3498db;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .key-findings ul {
+            margin-left: 20px;
+        }
+        .key-findings li {
+            margin: 10px 0;
+        }
+        .code-snippet {
+            background: #2c3e50;
+            color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            margin: 15px 0;
+        }
+        .project-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .project-links .btn {
+            margin: 0;
         }
     </style>
 </head>
@@ -127,21 +243,21 @@
                 <h3>🛒 E-Commerce Sales Analysis</h3>
                 <p>Analisis comprehensive data penjualan e-commerce untuk mengidentifikasi trend dan pattern pembelian customer.</p>
                 <p><strong>Tools:</strong> Python, Pandas, Matplotlib, Seaborn</p>
-                <a href="#" class="btn">View Project</a>
+                <button class="btn" onclick="openModal('modal1')">View Project</button>
             </div>
 
             <div class="project-card">
                 <h3>👥 Customer Segmentation</h3>
                 <p>Implementasi K-Means Clustering untuk segmentasi customer berdasarkan behavior dan demographics.</p>
                 <p><strong>Tools:</strong> Python, Scikit-learn, Tableau</p>
-                <a href="#" class="btn">View Project</a>
+                <button class="btn" onclick="openModal('modal2')">View Project</button>
             </div>
 
             <div class="project-card">
                 <h3>📈 Sales Dashboard</h3>
                 <p>Interactive dashboard untuk monitoring KPI sales secara real-time.</p>
                 <p><strong>Tools:</strong> Power BI, SQL Server</p>
-                <a href="#" class="btn">View Project</a>
+                <button class="btn" onclick="openModal('modal3')">View Project</button>
             </div>
         </section>
 
@@ -154,7 +270,7 @@
                 </div>
                 <div class="contact-item">
                     <h4>💼 LinkedIn</h4>
-                    <p><a href="#">https://www.linkedin.com/in/fikri-firstly-4b297a220/</a></p>
+                    <p><a href="https://www.linkedin.com/in/fikri-firstly-4b297a220/">linkedin.com/in/fikri-firstly-4b297a220/</a></p>
                 </div>
                 <div class="contact-item">
                     <h4>🐙 GitHub</h4>
@@ -167,5 +283,83 @@
     <footer style="text-align: center; padding: 20px; background: #2c3e50; color: white;">
         <p>&copy; 2024 Fikri Firstly. All rights reserved.</p>
     </footer>
-</body>
-</html>
+
+    <!-- Modal 1: E-Commerce Sales Analysis -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeModal('modal1')">&times;</span>
+                <h2>🛒 E-Commerce Sales Analysis</h2>
+            </div>
+            <div class="modal-body">
+                <div class="project-detail-section">
+                    <h3>📋 Project Overview</h3>
+                    <p>Dalam project ini, saya menganalisis dataset e-commerce yang berisi 500,000+ transaksi dari tahun 2019-2023 untuk memahami pattern pembelian customer dan memberikan rekomendasi strategis untuk meningkatkan revenue.</p>
+                    
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">NumPy</span>
+                        <span class="tech-tag">Matplotlib</span>
+                        <span class="tech-tag">Seaborn</span>
+                        <span class="tech-tag">Jupyter Notebook</span>
+                    </div>
+                </div>
+
+                <div class="project-detail-section">
+                    <h3>🎯 Objectives</h3>
+                    <ul>
+                        <li>Mengidentifikasi trend penjualan dan seasonal patterns</li>
+                        <li>Analisis customer behavior dan purchasing patterns</li>
+                        <li>Menentukan product categories dengan performa terbaik</li>
+                        <li>Memberikan actionable insights untuk marketing team</li>
+                    </ul>
+                </div>
+
+                <div class="project-detail-section">
+                    <h3>🔍 Methodology</h3>
+                    <ol>
+                        <li><strong>Data Collection & Cleaning</strong>
+                            <ul>
+                                <li>Import data dari multiple CSV files</li>
+                                <li>Handle missing values (3.2% of total data)</li>
+                                <li>Remove duplicates dan outliers</li>
+                            </ul>
+                        </li>
+                        <li><strong>Exploratory Data Analysis</strong>
+                            <ul>
+                                <li>Univariate & bivariate analysis</li>
+                                <li>Time series decomposition</li>
+                                <li>Customer cohort analysis</li>
+                            </ul>
+                        </li>
+                        <li><strong>Advanced Analytics</strong>
+                            <ul>
+                                <li>RFM (Recency, Frequency, Monetary) Analysis</li>
+                                <li>Market basket analysis</li>
+                                <li>Predictive modeling untuk future sales</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="project-detail-section">
+                    <h3>💻 Code Sample</h3>
+                    <div class="code-snippet">
+# Load and preprocess data
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Read data
+df = pd.read_csv('ecommerce_data.csv')
+print(f"Dataset shape: {df.shape}")
+
+# Data cleaning
+df['order_date'] = pd.to_datetime(df['order_date'])
+df = df.dropna(subset=['customer_id', 'product_id'])
+
+# Calculate key metrics
+total_revenue = df['revenue'].sum()
+avg_order_value = df.groupby('order
