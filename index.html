@@ -166,14 +166,6 @@
             border-radius: 20px;
             font-size: 13px;
         }
-        .project-image {
-            width: 100%;
-            max-width: 700px;
-            margin: 20px auto;
-            display: block;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
         .key-findings {
             background: #ecf0f1;
             padding: 20px;
@@ -196,15 +188,6 @@
             font-family: 'Courier New', monospace;
             font-size: 14px;
             margin: 15px 0;
-        }
-        .project-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-        .project-links .btn {
-            margin: 0;
         }
     </style>
 </head>
@@ -281,7 +264,7 @@
     </div>
 
     <footer style="text-align: center; padding: 20px; background: #2c3e50; color: white;">
-        <p>&copy; 2024 Fikri Firstly. All rights reserved.</p>
+        <p>&copy; 2025 Fikri Firstly. All rights reserved.</p>
     </footer>
 
     <!-- Modal 1: E-Commerce Sales Analysis -->
@@ -348,18 +331,108 @@
                     <div class="code-snippet">
 # Load and preprocess data
 import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-# Read data
-df = pd.read_csv('ecommerce_data.csv')
-print(f"Dataset shape: {df.shape}")
+    <!-- Modal 2: Customer Segmentation -->
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeModal('modal2')">&times;</span>
+                <h2>👥 Customer Segmentation</h2>
+            </div>
+            <div class="modal-body">
+                <div class="project-detail-section">
+                    <h3>📋 Project Overview</h3>
+                    <p>Dalam project ini, saya menggunakan K-Means Clustering untuk segmentasi customer berdasarkan behavior dan demographics untuk meningkatkan strategi pemasaran.</p>
+                    
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Scikit-learn</span>
+                        <span class="tech-tag">Tableau</span>
+                    </div>
+                </div>
 
-# Data cleaning
-df['order_date'] = pd.to_datetime(df['order_date'])
-df = df.dropna(subset=['customer_id', 'product_id'])
+                <div class="project-detail-section">
+                    <h3>🎯 Objectives</h3>
+                    <ul>
+                        <li>Mengidentifikasi segmen customer yang berbeda</li>
+                        <li>Menyesuaikan strategi pemasaran untuk setiap segmen</li>
+                        <li>Meningkatkan retensi customer</li>
+                    </ul>
+                </div>
 
-# Calculate key metrics
-total_revenue = df['revenue'].sum()
-avg_order_value = df.groupby('order
+                <div class="project-detail-section">
+                    <h3>🔍 Methodology</h3>
+                    <ol>
+                        <li><strong>Data Preparation</strong>
+                            <ul>
+                                <li>Data cleaning dan preprocessing</li>
+                                <li>Feature selection untuk clustering</li>
+                            </ul>
+                        </li>
+                        <li><strong>K-Means Clustering</strong>
+                            <ul>
+                                <li>Menentukan jumlah cluster optimal menggunakan Elbow Method</li>
+                                <li>Melakukan clustering dan analisis hasil</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3: Sales Dashboard -->
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeModal('modal3')">&times;</span>
+                <h2>📈 Sales Dashboard</h2>
+            </div>
+            <div class="modal-body">
+                <div class="project-detail-section">
+                    <h3>📋 Project Overview</h3>
+                    <p>Dashboard interaktif untuk memantau KPI sales secara real-time, memberikan wawasan yang cepat dan akurat untuk pengambilan keputusan.</p>
+                    
+                    <div class="tech-tags">
+                        <span class="tech-tag">Power BI</span>
+                        <span class="tech-tag">SQL Server</span>
+                    </div>
+                </div>
+
+                <div class="project-detail-section">
+                    <h3>🎯 Objectives</h3>
+                    <ul>
+                        <li>Memvisualisasikan data sales secara real-time</li>
+                        <li>Membantu tim dalam pengambilan keputusan yang cepat</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+
+        // Close the modal when clicking outside of it
+        window.onclick = function(event) {
+            const modals = ['modal1', 'modal2', 'modal3'];
+            modals.forEach(modal => {
+                if (event.target == document.getElementById(modal)) {
+                    closeModal(modal);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
