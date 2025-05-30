@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analyst Portfolio - Fikri Firstly</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+        }
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 0 20px;
+        }
+        .section {
+            background: white;
+            margin: 20px 0;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .skill-card {
+            background: #3498db;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            background: #2980b9;
+        }
+        .project-card {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        .project-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #2980b9;
+        }
+        .contact-info {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .contact-item {
+            flex: 1;
+            min-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Fikri Firstly</h1>
+            <p>Data Analyst | Data Enthusiast</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="section">
+            <h2>🎯 About Me</h2>
+            <p>Saya adalah seorang Data Analyst yang passionate dalam mengubah data mentah menjadi insight yang actionable. 
+            Berpengalaman dalam menggunakan berbagai tools analisis data untuk membantu pengambilan keputusan bisnis.</p>
+        </section>
+
+        <section class="section">
+            <h2>💻 Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">Python</div>
+                <div class="skill-card">SQL</div>
+                <div class="skill-card">Excel</div>
+                <div class="skill-card">Tableau</div>
+                <div class="skill-card">Power BI</div>
+                <div class="skill-card">Statistics</div>
+                <div class="skill-card">Machine Learning</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>📊 Featured Projects</h2>
+            
+            <div class="project-card">
+                <h3>🛒 E-Commerce Sales Analysis</h3>
+                <p>Analisis comprehensive data penjualan e-commerce untuk mengidentifikasi trend dan pattern pembelian customer.</p>
+                <p><strong>Tools:</strong> Python, Pandas, Matplotlib, Seaborn</p>
+                <a href="#" class="btn">View Project</a>
+            </div>
+
+            <div class="project-card">
+                <h3>👥 Customer Segmentation</h3>
+                <p>Implementasi K-Means Clustering untuk segmentasi customer berdasarkan behavior dan demographics.</p>
+                <p><strong>Tools:</strong> Python, Scikit-learn, Tableau</p>
+                <a href="#" class="btn">View Project</a>
+            </div>
+
+            <div class="project-card">
+                <h3>📈 Sales Dashboard</h3>
+                <p>Interactive dashboard untuk monitoring KPI sales secara real-time.</p>
+                <p><strong>Tools:</strong> Power BI, SQL Server</p>
+                <a href="#" class="btn">View Project</a>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>📬 Contact</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h4>📧 Email</h4>
+                    <p>fikricart@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <h4>💼 LinkedIn</h4>
+                    <p><a href="#">https://www.linkedin.com/in/fikri-firstly-4b297a220/</a></p>
+                </div>
+                <div class="contact-item">
+                    <h4>🐙 GitHub</h4>
+                    <p><a href="https://github.com/fakingbeach45u">github.com/fakingbeach45u</a></p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer style="text-align: center; padding: 20px; background: #2c3e50; color: white;">
+        <p>&copy; 2024 Fikri Firstly. All rights reserved.</p>
+    </footer>
+</body>
+</html>
