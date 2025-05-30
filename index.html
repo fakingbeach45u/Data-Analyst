@@ -166,14 +166,6 @@
             border-radius: 20px;
             font-size: 13px;
         }
-        .project-image {
-            width: 100%;
-            max-width: 700px;
-            margin: 20px auto;
-            display: block;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
         .key-findings {
             background: #ecf0f1;
             padding: 20px;
@@ -194,8 +186,9 @@
             border-radius: 5px;
             overflow-x: auto;
             font-family: 'Courier New', monospace;
-            font-size: 14px;
+            font-size: 12px;
             margin: 15px 0;
+            white-space: pre-wrap;
         }
         .project-links {
             display: flex;
@@ -240,23 +233,23 @@
             <h2>📊 Featured Projects</h2>
             
             <div class="project-card">
-                <h3>🛒 E-Commerce Sales Analysis</h3>
-                <p>Analisis comprehensive data penjualan e-commerce untuk mengidentifikasi trend dan pattern pembelian customer.</p>
+                <h3>📊 Data Analyst Salary Analysis</h3>
+                <p>Analisis komprehensif gaji Data Analyst di berbagai negara dan industri untuk memahami tren kompensasi dalam bidang data science.</p>
                 <p><strong>Tools:</strong> Python, Pandas, Matplotlib, Seaborn</p>
                 <button class="btn" onclick="openModal('modal1')">View Project</button>
             </div>
 
             <div class="project-card">
-                <h3>👥 Customer Segmentation</h3>
-                <p>Implementasi K-Means Clustering untuk segmentasi customer berdasarkan behavior dan demographics.</p>
-                <p><strong>Tools:</strong> Python, Scikit-learn, Tableau</p>
+                <h3>🛒 E-Commerce Sales Analysis</h3>
+                <p>Analisis mendalam data penjualan e-commerce untuk mengidentifikasi pattern, trend, dan memberikan insights untuk optimasi bisnis.</p>
+                <p><strong>Tools:</strong> Python, Pandas, Matplotlib, Seaborn</p>
                 <button class="btn" onclick="openModal('modal2')">View Project</button>
             </div>
 
             <div class="project-card">
-                <h3>📈 Sales Dashboard</h3>
-                <p>Interactive dashboard untuk monitoring KPI sales secara real-time.</p>
-                <p><strong>Tools:</strong> Power BI, SQL Server</p>
+                <h3>📈 Sales Dashboard with Power BI</h3>
+                <p>Dashboard interaktif menggunakan Power BI untuk monitoring KPI sales dan performa bisnis secara real-time.</p>
+                <p><strong>Tools:</strong> Power BI, DAX, SQL</p>
                 <button class="btn" onclick="openModal('modal3')">View Project</button>
             </div>
         </section>
@@ -284,82 +277,261 @@
         <p>&copy; 2024 Fikri Firstly. All rights reserved.</p>
     </footer>
 
-    <!-- Modal 1: E-Commerce Sales Analysis -->
+    <!-- Modal 1: Data Analyst Salary Analysis -->
     <div id="modal1" class="modal">
         <div class="modal-content">
             <div class="modal-header">
                 <span class="close" onclick="closeModal('modal1')">&times;</span>
+                <h2>📊 Data Analyst Salary Analysis</h2>
+            </div>
+            <div class="modal-body">
+                <div class="project-detail-section">
+                    <h3>📋 Project Overview</h3>
+                    <p>Proyek ini menganalisis data gaji Data Analyst dari berbagai sumber untuk memahami tren kompensasi, faktor-faktor yang mempengaruhi gaji, dan perbedaan regional dalam industri data analytics.</p>
+                    
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">Matplotlib</span>
+                        <span class="tech-tag">Seaborn</span>
+                        <span class="tech-tag">NumPy</span>
+                    </div>
+                </div>
+
+                <div class="project-detail-section">
+                    <h3>🎯 Key Analysis</h3>
+                    <ul>
+                        <li>Distribusi gaji berdasarkan lokasi geografis</li>
+                        <li>Pengaruh pengalaman kerja terhadap kompensasi</li>
+                        <li>Perbandingan gaji antar industri</li>
+                        <li>Tren gaji dari waktu ke waktu</li>
+                    </ul>
+                </div>
+
+                <div class="project-detail-section">
+                    <h3>💻 Code Sample</h3>
+                    <div class="code-snippet">import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
+
+# Load dataset
+df = pd.read_csv('data_analyst_salaries.csv')
+
+# Basic info about dataset
+print("Dataset Info:")
+print(f"Shape: {df.shape}")
+print(f"Columns: {df.columns.tolist()}")
+
+# Data cleaning
+df = df.dropna()
+df['salary_in_usd'] = pd.to_numeric(df['salary_in_usd'])
+
+# Statistical summary
+print("\nSalary Statistics:")
+print(df['salary_in_usd'].describe())
+
+# Visualization
+plt.figure(figsize=(12, 8))
+sns.boxplot(data=df, x='experience_level', y='salary_in_usd')
+plt.title('Salary Distribution by Experience Level')
+plt.show()
+
+# Salary analysis by country
+country_salary = df.groupby('company_location')['salary_in_usd'].mean().sort_values(ascending=False)
+plt.figure(figsize=(15, 8))
+country_salary.head(10).plot(kind='bar')
+plt.title('Average Salary by Country (Top 10)')
+plt.xticks(rotation=45)
+plt.show()
+                    </div>
+                </div>
+
+                <div class="key-findings">
+                    <h3>🔍 Key Findings</h3>
+                    <ul>
+                        <li>Senior level analysts earn 40-60% more than entry level</li>
+                        <li>US and European markets offer highest compensation</li>
+                        <li>Remote work opportunities show competitive salaries</li>
+                        <li>Tech industry leads in data analyst compensation</li>
+                    </ul>
+                </div>
+
+                <div class="project-links">
+                    <a href="https://github.com/fakingbeach45u/Data-Analyst/tree/main/Data%20Analyst%20Salary%20Analysis" class="btn" target="_blank">View on GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: E-Commerce Sales Analysis -->
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeModal('modal2')">&times;</span>
                 <h2>🛒 E-Commerce Sales Analysis</h2>
             </div>
             <div class="modal-body">
                 <div class="project-detail-section">
                     <h3>📋 Project Overview</h3>
-                    <p>Dalam project ini, saya menganalisis dataset e-commerce yang berisi 500,000+ transaksi dari tahun 2019-2023 untuk memahami pattern pembelian customer dan memberikan rekomendasi strategis untuk meningkatkan revenue.</p>
+                    <p>Analisis mendalam terhadap data penjualan e-commerce untuk mengidentifikasi pattern pembelian customer, seasonal trends, dan memberikan actionable insights untuk optimasi strategi bisnis.</p>
                     
                     <div class="tech-tags">
                         <span class="tech-tag">Python</span>
                         <span class="tech-tag">Pandas</span>
-                        <span class="tech-tag">NumPy</span>
                         <span class="tech-tag">Matplotlib</span>
                         <span class="tech-tag">Seaborn</span>
-                        <span class="tech-tag">Jupyter Notebook</span>
+                        <span class="tech-tag">Plotly</span>
                     </div>
                 </div>
 
                 <div class="project-detail-section">
-                    <h3>🎯 Objectives</h3>
-                    <ul>
-                        <li>Mengidentifikasi trend penjualan dan seasonal patterns</li>
-                        <li>Analisis customer behavior dan purchasing patterns</li>
-                        <li>Menentukan product categories dengan performa terbaik</li>
-                        <li>Memberikan actionable insights untuk marketing team</li>
-                    </ul>
-                </div>
-
-                <div class="project-detail-section">
-                    <h3>🔍 Methodology</h3>
+                    <h3>🔍 Analysis Focus</h3>
                     <ol>
-                        <li><strong>Data Collection & Cleaning</strong>
-                            <ul>
-                                <li>Import data dari multiple CSV files</li>
-                                <li>Handle missing values (3.2% of total data)</li>
-                                <li>Remove duplicates dan outliers</li>
-                            </ul>
-                        </li>
-                        <li><strong>Exploratory Data Analysis</strong>
-                            <ul>
-                                <li>Univariate & bivariate analysis</li>
-                                <li>Time series decomposition</li>
-                                <li>Customer cohort analysis</li>
-                            </ul>
-                        </li>
-                        <li><strong>Advanced Analytics</strong>
-                            <ul>
-                                <li>RFM (Recency, Frequency, Monetary) Analysis</li>
-                                <li>Market basket analysis</li>
-                                <li>Predictive modeling untuk future sales</li>
-                            </ul>
-                        </li>
+                        <li><strong>Sales Performance Analysis</strong> - Revenue trends dan growth patterns</li>
+                        <li><strong>Customer Behavior</strong> - Purchase patterns dan customer segmentation</li>
+                        <li><strong>Product Analysis</strong> - Best performing categories dan products</li>
+                        <li><strong>Geographic Analysis</strong> - Regional sales performance</li>
                     </ol>
                 </div>
 
                 <div class="project-detail-section">
                     <h3>💻 Code Sample</h3>
-                    <div class="code-snippet">
-# Load and preprocess data
-import pandas as pd
-import numpy as np
+                    <div class="code-snippet">import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+from datetime import datetime
 
-# Read data
-df = pd.read_csv('ecommerce_data.csv')
-print(f"Dataset shape: {df.shape}")
+# Load data
+df = pd.read_csv('ecommerce_sales.csv')
 
-# Data cleaning
+# Data preprocessing
 df['order_date'] = pd.to_datetime(df['order_date'])
-df = df.dropna(subset=['customer_id', 'product_id'])
+df['month'] = df['order_date'].dt.month
+df['year'] = df['order_date'].dt.year
 
-# Calculate key metrics
-total_revenue = df['revenue'].sum()
-avg_order_value = df.groupby('order
+# Monthly sales analysis
+monthly_sales = df.groupby(['year', 'month'])['total_sales'].sum().reset_index()
+
+# Top selling products
+top_products = df.groupby('product_name')['quantity'].sum().sort_values(ascending=False).head(10)
+
+# Customer analysis
+customer_stats = df.groupby('customer_id').agg({
+    'total_sales': 'sum',
+    'order_id': 'count'
+}).rename(columns={'order_id': 'order_count'})
+
+# Visualizations
+plt.figure(figsize=(15, 10))
+
+# Monthly sales trend
+plt.subplot(2, 2, 1)
+monthly_sales.plot(x='month', y='total_sales', kind='line')
+plt.title('Monthly Sales Trend')
+
+# Top products
+plt.subplot(2, 2, 2)
+top_products.plot(kind='bar')
+plt.title('Top 10 Selling Products')
+plt.xticks(rotation=45)
+
+plt.tight_layout()
+plt.show()
+                    </div>
+                </div>
+
+                <div class="key-findings">
+                    <h3>📈 Key Insights</h3>
+                    <ul>
+                       <li>Q1 and Q4 show highest sales due to holiday seasons</li>
+                       <li>Top 10 products contribute 40% of total sales</li>
+                        <li>Customer segmentation reveals loyal repeat buyers</li>
+                        <li>Region X outperforms others in sales growth</li>
+                    </ul>
+                                    </ul>
+                </div>
+
+                <div class="project-links">
+                    <a href="https://github.com/fakingbeach45u/Data-Analyst/tree/main/E-Commerce%20Sales%20Analysis" class="btn" target="_blank">View on GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3: Sales Dashboard with Power BI -->
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeModal('modal3')">&times;</span>
+                <h2>📈 Sales Dashboard with Power BI</h2>
+            </div>
+            <div class="modal-body">
+                <div class="project-detail-section">
+                    <h3>📋 Project Overview</h3>
+                    <p>Membangun dashboard interaktif menggunakan Power BI untuk memonitor KPI sales, performa produk, dan tren penjualan secara real-time. Dashboard ini membantu manajemen dalam pengambilan keputusan berbasis data.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Power BI</span>
+                        <span class="tech-tag">DAX</span>
+                        <span class="tech-tag">SQL</span>
+                    </div>
+                </div>
+                <div class="project-detail-section">
+                    <h3>📊 Dashboard Features</h3>
+                    <ul>
+                        <li>Visualisasi penjualan bulanan dan tahunan</li>
+                        <li>Analisis performa produk dan kategori</li>
+                        <li>Segmentasi pelanggan dan analisis geografis</li>
+                        <li>Filter interaktif untuk eksplorasi data</li>
+                    </ul>
+                </div>
+                <div class="project-detail-section">
+                    <h3>🖥️ Dashboard Preview</h3>
+                    <img src="https://raw.githubusercontent.com/fakingbeach45u/Data-Analyst/main/Sales%20Dashboard%20with%20Power%20BI/dashboard_preview.png" alt="Power BI Dashboard Preview" style="width:100%;max-width:700px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.08);margin:20px 0;">
+                </div>
+                <div class="key-findings">
+                    <h3>🔑 Key Insights</h3>
+                    <ul>
+                        <li>Dashboard memudahkan identifikasi produk terlaris dan area dengan pertumbuhan tercepat</li>
+                        <li>Manajemen dapat memonitor KPI secara real-time dan mengambil keputusan lebih cepat</li>
+                        <li>Filter interaktif meningkatkan eksplorasi data oleh user non-teknis</li>
+                    </ul>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/fakingbeach45u/Data-Analyst/tree/main/Sales%20Dashboard%20with%20Power%20BI" class="btn" target="_blank">View on GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Modal open/close logic
+        function openModal(id) {
+            document.getElementById(id).style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal(id) {
+            document.getElementById(id).style.display = 'none';
+            document.body.style.overflow = '';
+        }
+        // Close modal when clicking outside content
+        window.onclick = function(event) {
+            document.querySelectorAll('.modal').forEach(function(modal) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                    document.body.style.overflow = '';
+                }
+            });
+        }
+        // Optional: Close modal with ESC key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                document.querySelectorAll('.modal').forEach(function(modal) {
+                    modal.style.display = "none";
+                });
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
+</body>
+</html>
